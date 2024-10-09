@@ -1,0 +1,143 @@
+{
+    "nodes": {
+        "BlobFishPro": {
+            "level": 437,
+            "connections": [
+                "Odd5209",
+                "oO HollyW o o D",
+                "v pooch v",
+                "Leeboi22",
+                "o R I T T Y v",
+                "WonderCabbage32",
+                "TardisBoxV2",
+                "moneyman2166",
+                "RoflWaffle36",
+                "Insan3 Leg3nd"
+            ]
+        },
+        "Odd5209": {
+            "level": 229,
+            "connections": [
+                "BlobFishPro"
+            ]
+        },
+        "Z0MBPR1NC3SS": {
+            "level": 221,
+            "connections": [
+                "BlobFishPro",
+                "Odd5209"
+            ]
+        },
+        "MD BrasilRJ": {
+            "level": 138,
+            "connections": [
+                "BlobFishPro"
+            ]
+        },
+        "oO HollyW o o D": {
+            "level": 155,
+            "connections": [
+                "BlobFishPro",
+                "v pooch v"
+            ]
+        },
+        "v pooch v": {
+            "level": 158,
+            "connections": [
+                "BlobFishPro",
+                "oO HollyW o o D",
+                "moneyman2166",
+                "Insan3 Leg3nd"
+            ]
+        },
+        "o R I T T Y v": {
+            "level": 32,
+            "connections": [
+                "BlobFishPro",
+                "Leeboi22"
+            ]
+        },
+        "Leeboi22": {
+            "level": 32,
+            "connections": [
+                "BlobFishPro",
+                "o R I T T Y v"
+            ]
+        },
+        "WonderCabbage32": {
+            "level": 13,
+            "connections": [
+                "BlobFishPro",
+                "TardisBoxV2"
+            ]
+        },
+        "TardisBoxV2": {
+            "level": 9,
+            "connections": [
+                "WonderCabbage32",
+                "BlobFishPro"
+            ]
+        },
+        "LuckTsunami": {
+            "level": 151,
+            "connections": [
+                "BlobFishPro"
+            ]
+        },
+        "RoflWaffle36": {
+            "level": 62,
+            "connections": [
+                "BlobFishPro"
+            ]
+        },
+        "Arivvan": {
+            "level": 11,
+            "connections": []
+        },
+        "moneyman2166": {
+            "level": 21,
+            "connections": [
+                "BlobFishPro",
+                "Arivvan",
+                "v pooch v"
+            ]
+        },
+        "CryoMoon3929": {
+            "level": 23,
+            "connections": [
+                "BlobFishPro",
+                "v pooch v",
+                "moneyman2166",
+                "Arivvan"
+            ]
+        },
+        "B2W Joshua": {
+            "level": 254,
+            "connections": [
+                "BlobFishPro"
+            ]
+        },
+        "Insan3 Leg3nd": {
+            "level": 144,
+            "connections": [
+                "BlobFishPro",
+                "v pooch v"
+            ]
+        },
+        "DommMommy69": {
+            "level": 170,
+            "connections": [
+                "v pooch v",
+                "Insan3 Leg3nd",
+                "BlobFishPro"
+            ]
+        },
+        "vgods": {
+            "level": 300,
+            "main_char": [
+                "Zerocool"
+            ],
+            "connections": []
+        }
+    }
+}
