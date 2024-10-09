@@ -9,9 +9,9 @@ def create_page():
 def contact():
     st.write("Bleeding Edge Community Tree")
     st.write(f"Currently {get_node_count()} Nodes!")
-    st.write("Link to google Forum to submit data")
+    st.write("Link to google Forum to submit data: https://forms.gle/DwxipGdJrvArv4pT9")
     st.subheader("Description")
-    st.write("This is goofy app")
+    st.write("...")
     st.subheader("Navigation")
     st.write("* About: Shows more information")
     st.write("* ...")

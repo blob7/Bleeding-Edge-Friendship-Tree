@@ -3,6 +3,7 @@
         "BlobFishPro": {
             "level": 437,
             "connections": [
+                "Z0MBPR1NC3SS",
                 "Odd5209",
                 "oO HollyW o o D",
                 "v pooch v",
@@ -18,7 +19,8 @@
         "Odd5209": {
             "level": 229,
             "connections": [
-                "BlobFishPro"
+                "BlobFishPro",
+                "Z0MBPR1NC3SS"
             ]
         },
         "Z0MBPR1NC3SS": {
@@ -92,7 +94,11 @@
         },
         "Arivvan": {
             "level": 11,
-            "connections": []
+            "connections": [
+                "BlobFishPro",
+                "moneyman2166",
+                "CryoMoon3929"
+            ]
         },
         "moneyman2166": {
             "level": 21,
@@ -121,6 +127,7 @@
             "level": 144,
             "connections": [
                 "BlobFishPro",
+                "DommMommy69",
                 "v pooch v"
             ]
         },
@@ -131,13 +138,6 @@
                 "Insan3 Leg3nd",
                 "BlobFishPro"
             ]
-        },
-        "vgods": {
-            "level": 300,
-            "main_char": [
-                "Zerocool"
-            ],
-            "connections": []
         }
     }
 }

@@ -5,14 +5,12 @@ def create_page():
     description()
     contact()
 
-
 def contact():
     st.write("Author: Blob")
     st.write("Contact: Discord: blobfishpro")
 
 def description():
     st.title("Description")
-
 
 def main():
     page_config(icon="🌐", title="About")
