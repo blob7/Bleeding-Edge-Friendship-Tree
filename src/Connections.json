@@ -14,20 +14,25 @@
                 "moneyman2166",
                 "RoflWaffle36",
                 "Insan3 Leg3nd"
-            ]
+            ],
+            "main_char": "Daemon"
         },
         "Odd5209": {
             "level": 229,
             "connections": [
                 "BlobFishPro",
-                "Z0MBPR1NC3SS"
-            ]
+                "IsaacDarso87",
+                "The Aladeen",
+                "Gunked",
+                "thetruepilliger",
+                "Dy4us"
+            ],
+            "main_char": "Daemon"
         },
         "Z0MBPR1NC3SS": {
             "level": 221,
             "connections": [
-                "BlobFishPro",
-                "Odd5209"
+                "BlobFishPro"
             ]
         },
         "MD BrasilRJ": {
@@ -39,18 +44,16 @@
         "oO HollyW o o D": {
             "level": 155,
             "connections": [
-                "BlobFishPro",
-                "v pooch v"
+                "BlobFishPro"
             ]
         },
         "v pooch v": {
             "level": 158,
             "connections": [
                 "BlobFishPro",
-                "oO HollyW o o D",
-                "moneyman2166",
                 "Insan3 Leg3nd"
-            ]
+            ],
+            "main_char": "Zerocool"
         },
         "o R I T T Y v": {
             "level": 32,
@@ -104,9 +107,9 @@
             "level": 21,
             "connections": [
                 "BlobFishPro",
-                "Arivvan",
-                "v pooch v"
-            ]
+                "Arivvan"
+            ],
+            "main_char": "Nidhoggr"
         },
         "CryoMoon3929": {
             "level": 23,
@@ -137,6 +140,41 @@
                 "v pooch v",
                 "Insan3 Leg3nd",
                 "BlobFishPro"
+            ]
+        },
+        "IsaacDarso87": {
+            "level": 280,
+            "main_char": "Nidhoggr",
+            "connections": [
+                "Odd5209"
+            ]
+        },
+        "The Aladeen": {
+            "level": 273,
+            "main_char": "Miko",
+            "connections": [
+                "Odd5209"
+            ]
+        },
+        "Gunked": {
+            "level": 185,
+            "main_char": "Cass",
+            "connections": [
+                "Odd5209"
+            ]
+        },
+        "thetruepilliger": {
+            "level": 350,
+            "main_char": "Gizmo",
+            "connections": [
+                "Odd5209"
+            ]
+        },
+        "Dy4us": {
+            "level": 394,
+            "main_char": "Zerocool",
+            "connections": [
+                "Odd5209"
             ]
         }
     }
