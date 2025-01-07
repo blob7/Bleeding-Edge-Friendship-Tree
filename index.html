@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 100vh;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+             #config {
+                 float: left;
+                 width: 400px;
+                 height: 600px;
+             }
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+            <div id="config"></div>
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "XxUnreached", "image": "https://static.bleedingedge.com/uploads/2019/11/Cass-thumbnail.png", "label": "XxUnreached", "shape": "circularImage", "title": "Level: 163 | Main Character: Cass"}, {"color": "#97c2fc", "id": "Odd5209", "image": "https://static.bleedingedge.com/uploads/2019/04/daemon.png", "label": "Odd5209", "shape": "circularImage", "title": "Level: 229 | Main Character: Daemon"}, {"color": "#97c2fc", "id": "CR7SHADOW", "image": "https://static.bleedingedge.com/uploads/2019/04/daemon.png", "label": "CR7SHADOW", "shape": "circularImage", "title": "Level: 258 | Main Character: Daemon"}, {"color": "#97c2fc", "id": "BlobFishPro", "image": "https://static.bleedingedge.com/uploads/2019/04/daemon.png", "label": "BlobFishPro", "shape": "circularImage", "title": "Level: 437 | Main Character: Daemon"}, {"color": "#97c2fc", "id": "makavelidios", "image": "https://static.bleedingedge.com/uploads/2019/04/daemon.png", "label": "makavelidios", "shape": "circularImage", "title": "Level: 497 | Main Character: Daemon"}, {"color": "#97c2fc", "id": "PaneraBreaad", "image": "https://static.bleedingedge.com/uploads/2019/04/daemon.png", "label": "PaneraBreaad", "shape": "circularImage", "title": "Level: Unknown | Main Character: Daemon"}, {"color": "#97c2fc", "id": "That guys pumpkin ", "image": "https://static.bleedingedge.com/uploads/2019/04/gizmo.png", "label": "That guys pumpkin ", "shape": "circularImage", "title": "Level: 87 | Main Character: Gizmo"}, {"color": "#97c2fc", "id": "MedianBonsai766", "image": "https://static.bleedingedge.com/uploads/2019/04/makutu.png", "label": "MedianBonsai766", "shape": "circularImage", "title": "Level: 246 | Main Character: Makutu"}, {"color": "#97c2fc", "id": "CryoMoon3929", "image": "https://static.bleedingedge.com/uploads/2019/04/nidhoggr.png", "label": "CryoMoon3929", "shape": "circularImage", "title": "Level: Unknown | Main Character: Nidhoggr"}, {"color": "#97c2fc", "id": "grey_tucc", "image": "https://static.bleedingedge.com/uploads/2019/04/zerocool.png", "label": "grey_tucc", "shape": "circularImage", "title": "Level: 51 | Main Character: ZeroCool"}, {"color": "#97c2fc", "id": "MD Brasilrj", "image": "https://static.bleedingedge.com/uploads/2019/04/zerocool.png", "label": "MD Brasilrj", "shape": "circularImage", "title": "Level: 130 | Main Character: ZeroCool"}, {"color": "#97c2fc", "id": "HajimeJapan", "image": "https://static.bleedingedge.com/uploads/2019/04/zerocool.png", "label": "HajimeJapan", "shape": "circularImage", "title": "Level: 361 | Main Character: ZeroCool"}, {"color": "#97c2fc", "id": "Z0MBPR1NC3SS", "image": "https://static.bleedingedge.com/uploads/2019/04/zerocool.png", "label": "Z0MBPR1NC3SS", "shape": "circularImage", "title": "Level: Unknown | Main Character: ZeroCool"}, {"color": "#97c2fc", "id": "Airplaingod7", "image": "https://static.bleedingedge.com/uploads/2019/04/zerocool.png", "label": "Airplaingod7", "shape": "circularImage", "title": "Level: Unknown | Main Character: ZeroCool"}, {"color": "#97c2fc", "id": "Dy4us", "image": "", "label": "Dy4us", "shape": "circularImage", "title": "Level: 400 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Funky3242", "image": "https://static.bleedingedge.com/uploads/2019/04/nidhoggr.png", "label": "Funky3242", "shape": "circularImage", "title": "Level: Unknown | Main Character: Nidhoggr"}, {"color": "#97c2fc", "id": "Surrtan", "image": "https://static.bleedingedge.com/uploads/2019/04/kulev.png", "label": "Surrtan", "shape": "circularImage", "title": "Level: Unknown | Main Character: Kulev"}, {"color": "#97c2fc", "id": "b4njAx", "image": "https://static.bleedingedge.com/uploads/2019/04/el_bastardo.png", "label": "b4njAx", "shape": "circularImage", "title": "Level: Unknown | Main Character: El Bastardo"}, {"color": "#97c2fc", "id": "IsaacDarso87", "image": "https://static.bleedingedge.com/uploads/2019/04/nidhoggr.png", "label": "IsaacDarso87", "shape": "circularImage", "title": "Level: 280 | Main Character: Nidhoggr"}, {"color": "#97c2fc", "id": "The Aladeen", "image": "https://static.bleedingedge.com/uploads/2019/04/miko.png", "label": "The Aladeen", "shape": "circularImage", "title": "Level: 273 | Main Character: Miko"}, {"color": "#97c2fc", "id": "Gunked", "image": "https://static.bleedingedge.com/uploads/2019/11/Cass-thumbnail.png", "label": "Gunked", "shape": "circularImage", "title": "Level: 185 | Main Character: Cass"}, {"color": "#97c2fc", "id": "thetruepilliger", "image": "https://static.bleedingedge.com/uploads/2019/04/gizmo.png", "label": "thetruepilliger", "shape": "circularImage", "title": "Level: 350 | Main Character: Gizmo"}, {"color": "#97c2fc", "id": "Rollingtwenty", "image": "", "label": "Rollingtwenty", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Tx deathdealer0", "image": "", "label": "Tx deathdealer0", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "fmg2288", "image": "", "label": "fmg2288", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "FatterGrain2", "image": "", "label": "FatterGrain2", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Cthulue", "image": "", "label": "Cthulue", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "ADirtyYoshi", "image": "https://static.bleedingedge.com/uploads/2019/04/zerocool.png", "label": "ADirtyYoshi", "shape": "circularImage", "title": "Level: Unknown | Main Character: ZeroCool"}, {"color": "#97c2fc", "id": "M4IFU", "image": "", "label": "M4IFU", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Yuta", "image": "https://static.bleedingedge.com/uploads/2019/04/daemon.png", "label": "Yuta", "shape": "circularImage", "title": "Level: Unknown | Main Character: Daemon"}, {"color": "#97c2fc", "id": "Alexyooo97", "image": "", "label": "Alexyooo97", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "AzTeRisk", "image": "", "label": "AzTeRisk", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "B1akehow", "image": "", "label": "B1akehow", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "BloodyMenaxe", "image": "", "label": "BloodyMenaxe", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Carpet Diem GRC", "image": "", "label": "Carpet Diem GRC", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "IFeetSniff", "image": "", "label": "IFeetSniff", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Imonly9", "image": "", "label": "Imonly9", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "SightlyCargo440", "image": "", "label": "SightlyCargo440", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "UNSC Padwan", "image": "", "label": "UNSC Padwan", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "WHOLadyChum", "image": "", "label": "WHOLadyChum", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Jukeboxhero", "image": "", "label": "Jukeboxhero", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "eyeoz", "image": "", "label": "eyeoz", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "zzinsane", "image": "", "label": "zzinsane", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "oceanman", "image": "", "label": "oceanman", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "glint", "image": "", "label": "glint", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "diamondgem", "image": "", "label": "diamondgem", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "escanor", "image": "", "label": "escanor", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "gored", "image": "", "label": "gored", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "neon spark", "image": "", "label": "neon spark", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "little ninja", "image": "", "label": "little ninja", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "mysome", "image": "", "label": "mysome", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "rubba duckie", "image": "", "label": "rubba duckie", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "tb purp", "image": "", "label": "tb purp", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "zero", "image": "", "label": "zero", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "woofy loser", "image": "", "label": "woofy loser", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "the twisted angel", "image": "", "label": "the twisted angel", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "rich Ken kaneki", "image": "", "label": "rich Ken kaneki", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Arivvan", "image": "", "label": "Arivvan", "shape": "circularImage", "title": "Level: 11 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "v pooch v", "image": "https://static.bleedingedge.com/uploads/2019/04/zerocool.png", "label": "v pooch v", "shape": "circularImage", "title": "Level: 158 | Main Character: ZeroCool"}, {"color": "#97c2fc", "id": "DommMommy69", "image": "", "label": "DommMommy69", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Insan3 Leg3nd", "image": "", "label": "Insan3 Leg3nd", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "oO HollyW o o D", "image": "", "label": "oO HollyW o o D", "shape": "circularImage", "title": "Level: 155 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "WonderCabbage32", "image": "", "label": "WonderCabbage32", "shape": "circularImage", "title": "Level: 13 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "TardisBoxV2", "image": "", "label": "TardisBoxV2", "shape": "circularImage", "title": "Level: 9 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "LuckTsunami", "image": "", "label": "LuckTsunami", "shape": "circularImage", "title": "Level: 151 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "RoflWaffle36", "image": "", "label": "RoflWaffle36", "shape": "circularImage", "title": "Level: 62 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "o R I T T Y v", "image": "", "label": "o R I T T Y v", "shape": "circularImage", "title": "Level: 32 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Leeboi22", "image": "", "label": "Leeboi22", "shape": "circularImage", "title": "Level: 32 | Main Character: Unknown"}, {"color": "#97c2fc", "id": "B2W Joshua", "image": "https://static.bleedingedge.com/uploads/2019/04/buttercup.png", "label": "B2W Joshua", "shape": "circularImage", "title": "Level: 1254 | Main Character: Buttercup"}, {"color": "#97c2fc", "id": "Lord Andard", "image": "", "label": "Lord Andard", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "VKSinclair ", "image": "", "label": "VKSinclair ", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Antikosmic", "image": "", "label": "Antikosmic", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "hanzo", "image": "", "label": "hanzo", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Lhasadekin", "image": "", "label": "Lhasadekin", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "wonndalone", "image": "", "label": "wonndalone", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "kidfromcali", "image": "", "label": "kidfromcali", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "alexdj", "image": "", "label": "alexdj", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "drnkpotate", "image": "", "label": "drnkpotate", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "masonmayne", "image": "", "label": "masonmayne", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "jawnsinah", "image": "", "label": "jawnsinah", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Spacebunny1114 ", "image": "", "label": "Spacebunny1114 ", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Phatcat1223", "image": "", "label": "Phatcat1223", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Burby92", "image": "", "label": "Burby92", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "RageKrom", "image": "", "label": "RageKrom", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "CHA0S44", "image": "", "label": "CHA0S44", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "XxNuKe YoMaMaXx", "image": "", "label": "XxNuKe YoMaMaXx", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Wanda Maximoff", "image": "", "label": "Wanda Maximoff", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "DoS Pogorausch", "image": "", "label": "DoS Pogorausch", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "ItsNE0N spark", "image": "", "label": "ItsNE0N spark", "shape": "circularImage", "title": "Level: Unknown | Main Character: Unknown"}, {"color": "#97c2fc", "id": "Alsiel Hallel", "image": "https://static.bleedingedge.com/uploads/2019/11/Cass-thumbnail.png", "label": "Alsiel Hallel", "shape": "circularImage", "title": "Level: Unknown | Main Character: Cass"}, {"color": "#97c2fc", "id": "sneik", "image": "https://static.bleedingedge.com/uploads/2019/04/makutu.png", "label": "sneik", "shape": "circularImage", "title": "Level: Unknown | Main Character: Makutu"}, {"color": "#97c2fc", "id": "moneyman2166", "image": "https://static.bleedingedge.com/uploads/2019/04/nidhoggr.png", "label": "moneyman2166", "shape": "circularImage", "title": "Level: 21 | Main Character: Nidhoggr"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "Odd5209", "to": "IsaacDarso87"}, {"arrows": "to", "from": "Odd5209", "to": "BlobFishPro"}, {"arrows": "to", "from": "Odd5209", "to": "The Aladeen"}, {"arrows": "to", "from": "Odd5209", "to": "Gunked"}, {"arrows": "to", "from": "Odd5209", "to": "thetruepilliger"}, {"arrows": "to", "from": "CR7SHADOW", "to": "Rollingtwenty"}, {"arrows": "to", "from": "CR7SHADOW", "to": "makavelidios"}, {"arrows": "to", "from": "CR7SHADOW", "to": "Z0MBPR1NC3SS"}, {"arrows": "to", "from": "CR7SHADOW", "to": "Tx deathdealer0"}, {"arrows": "to", "from": "CR7SHADOW", "to": "fmg2288"}, {"arrows": "to", "from": "BlobFishPro", "to": "v pooch v"}, {"arrows": "to", "from": "BlobFishPro", "to": "DommMommy69"}, {"arrows": "to", "from": "BlobFishPro", "to": "Insan3 Leg3nd"}, {"arrows": "to", "from": "BlobFishPro", "to": "oO HollyW o o D"}, {"arrows": "to", "from": "BlobFishPro", "to": "LuckTsunami"}, {"arrows": "to", "from": "BlobFishPro", "to": "RoflWaffle36"}, {"arrows": "to", "from": "BlobFishPro", "to": "Z0MBPR1NC3SS"}, {"arrows": "to", "from": "BlobFishPro", "to": "MD Brasilrj"}, {"arrows": "to", "from": "BlobFishPro", "to": "o R I T T Y v"}, {"arrows": "to", "from": "BlobFishPro", "to": "Leeboi22"}, {"arrows": "to", "from": "BlobFishPro", "to": "B2W Joshua"}, {"arrows": "to", "from": "makavelidios", "to": "Phatcat1223"}, {"arrows": "to", "from": "PaneraBreaad", "to": "BlobFishPro"}, {"arrows": "to", "from": "PaneraBreaad", "to": "Z0MBPR1NC3SS"}, {"arrows": "to", "from": "PaneraBreaad", "to": "FatterGrain2"}, {"arrows": "to", "from": "PaneraBreaad", "to": "Cthulue"}, {"arrows": "to", "from": "PaneraBreaad", "to": "ADirtyYoshi"}, {"arrows": "to", "from": "PaneraBreaad", "to": "M4IFU"}, {"arrows": "to", "from": "PaneraBreaad", "to": "Odd5209"}, {"arrows": "to", "from": "PaneraBreaad", "to": "Yuta"}, {"arrows": "to", "from": "PaneraBreaad", "to": "Alexyooo97"}, {"arrows": "to", "from": "PaneraBreaad", "to": "AzTeRisk"}, {"arrows": "to", "from": "PaneraBreaad", "to": "B1akehow"}, {"arrows": "to", "from": "PaneraBreaad", "to": "BloodyMenaxe"}, {"arrows": "to", "from": "PaneraBreaad", "to": "Carpet Diem GRC"}, {"arrows": "to", "from": "PaneraBreaad", "to": "IFeetSniff"}, {"arrows": "to", "from": "PaneraBreaad", "to": "Imonly9"}, {"arrows": "to", "from": "PaneraBreaad", "to": "SightlyCargo440"}, {"arrows": "to", "from": "PaneraBreaad", "to": "thetruepilliger"}, {"arrows": "to", "from": "PaneraBreaad", "to": "UNSC Padwan"}, {"arrows": "to", "from": "PaneraBreaad", "to": "WHOLadyChum"}, {"arrows": "to", "from": "MedianBonsai766", "to": "BlobFishPro"}, {"arrows": "to", "from": "MedianBonsai766", "to": "Odd5209"}, {"arrows": "to", "from": "MedianBonsai766", "to": "Dy4us"}, {"arrows": "to", "from": "MedianBonsai766", "to": "Jukeboxhero"}, {"arrows": "to", "from": "MedianBonsai766", "to": "v pooch v"}, {"arrows": "to", "from": "MedianBonsai766", "to": "Gunked"}, {"arrows": "to", "from": "MedianBonsai766", "to": "eyeoz"}, {"arrows": "to", "from": "MedianBonsai766", "to": "DoS Pogorausch"}, {"arrows": "to", "from": "MedianBonsai766", "to": "M4IFU"}, {"arrows": "to", "from": "MedianBonsai766", "to": "Antikosmic"}, {"arrows": "to", "from": "MedianBonsai766", "to": "zzinsane"}, {"arrows": "to", "from": "MedianBonsai766", "to": "oceanman"}, {"arrows": "to", "from": "MedianBonsai766", "to": "Carpet Diem GRC"}, {"arrows": "to", "from": "MedianBonsai766", "to": "glint"}, {"arrows": "to", "from": "MedianBonsai766", "to": "diamondgem"}, {"arrows": "to", "from": "MedianBonsai766", "to": "escanor"}, {"arrows": "to", "from": "MedianBonsai766", "to": "fmg2288"}, {"arrows": "to", "from": "MedianBonsai766", "to": "gored"}, {"arrows": "to", "from": "MedianBonsai766", "to": "HajimeJapan"}, {"arrows": "to", "from": "MedianBonsai766", "to": "neon spark"}, {"arrows": "to", "from": "MedianBonsai766", "to": "little ninja"}, {"arrows": "to", "from": "MedianBonsai766", "to": "mysome"}, {"arrows": "to", "from": "MedianBonsai766", "to": "rubba duckie"}, {"arrows": "to", "from": "MedianBonsai766", "to": "tb purp"}, {"arrows": "to", "from": "MedianBonsai766", "to": "XxNuKe YoMaMaXx"}, {"arrows": "to", "from": "MedianBonsai766", "to": "Yuta"}, {"arrows": "to", "from": "MedianBonsai766", "to": "zero"}, {"arrows": "to", "from": "MedianBonsai766", "to": "woofy loser"}, {"arrows": "to", "from": "MedianBonsai766", "to": "thetruepilliger"}, {"arrows": "to", "from": "MedianBonsai766", "to": "the twisted angel"}, {"arrows": "to", "from": "MedianBonsai766", "to": "rich Ken kaneki"}, {"arrows": "to, from", "from": "BlobFishPro", "to": "CryoMoon3929"}, {"arrows": "to", "from": "MD Brasilrj", "to": "Lord Andard"}, {"arrows": "to", "from": "MD Brasilrj", "to": "LuckTsunami"}, {"arrows": "to", "from": "MD Brasilrj", "to": "VKSinclair "}, {"arrows": "to", "from": "HajimeJapan", "to": "Alsiel Hallel"}, {"arrows": "to", "from": "HajimeJapan", "to": "BlobFishPro"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "Antikosmic"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "FatterGrain2"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "hanzo"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "Yuta"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "ADirtyYoshi"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "oceanman"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "Lhasadekin"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "Wanda Maximoff"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "SightlyCargo440"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "wonndalone"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "kidfromcali"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "alexdj"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "drnkpotate"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "masonmayne"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "jawnsinah"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "fmg2288"}, {"arrows": "to, from", "from": "HajimeJapan", "to": "Z0MBPR1NC3SS"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "little ninja"}, {"arrows": "to", "from": "Z0MBPR1NC3SS", "to": "sneik"}, {"arrows": "to, from", "from": "Odd5209", "to": "Dy4us"}, {"arrows": "to", "from": "Dy4us", "to": "thetruepilliger"}, {"arrows": "to", "from": "Dy4us", "to": "Spacebunny1114 "}, {"arrows": "to", "from": "Surrtan", "to": "b4njAx"}, {"arrows": "to", "from": "b4njAx", "to": "Phatcat1223"}, {"arrows": "to", "from": "b4njAx", "to": "Burby92"}, {"arrows": "to", "from": "b4njAx", "to": "Z0MBPR1NC3SS"}, {"arrows": "to", "from": "b4njAx", "to": "RageKrom"}, {"arrows": "to", "from": "b4njAx", "to": "CHA0S44"}, {"arrows": "to", "from": "b4njAx", "to": "Dy4us"}, {"arrows": "to", "from": "b4njAx", "to": "XxNuKe YoMaMaXx"}, {"arrows": "to", "from": "b4njAx", "to": "ADirtyYoshi"}, {"arrows": "to", "from": "b4njAx", "to": "Wanda Maximoff"}, {"arrows": "to", "from": "b4njAx", "to": "DoS Pogorausch"}, {"arrows": "to", "from": "b4njAx", "to": "thetruepilliger"}, {"arrows": "to", "from": "b4njAx", "to": "ItsNE0N spark"}, {"arrows": "to, from", "from": "BlobFishPro", "to": "Arivvan"}, {"arrows": "to", "from": "Arivvan", "to": "CryoMoon3929"}, {"arrows": "to, from", "from": "BlobFishPro", "to": "WonderCabbage32"}, {"arrows": "to, from", "from": "WonderCabbage32", "to": "TardisBoxV2"}, {"arrows": "to, from", "from": "BlobFishPro", "to": "TardisBoxV2"}, {"arrows": "to", "from": "moneyman2166", "to": "v pooch v"}, {"arrows": "to, from", "from": "BlobFishPro", "to": "moneyman2166"}, {"arrows": "to, from", "from": "CryoMoon3929", "to": "moneyman2166"}, {"arrows": "to, from", "from": "Arivvan", "to": "moneyman2166"}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": true
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+                  // if this network requires displaying the configure window,
+                  // put it in its div
+                  options.configure["container"] = document.getElementById("config");
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
