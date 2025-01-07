@@ -1,0 +1,706 @@
+{
+    "nodes": {
+        "XxUnreached": {
+            "level": 163,
+            "main_char": "Cass",
+            "connections": [],
+            "survey_completed": true
+        },
+        "Odd5209": {
+            "level": 229,
+            "main_char": "Daemon",
+            "connections": [
+                "IsaacDarso87",
+                "BlobFishPro",
+                "The Aladeen",
+                "Gunked",
+                "thetruepilliger",
+                "Dy4us"
+            ],
+            "survey_completed": true
+        },
+        "CR7SHADOW": {
+            "level": 258,
+            "main_char": "Daemon",
+            "connections": [
+                "Rollingtwenty",
+                "makavelidios",
+                "Z0MBPR1NC3SS",
+                "Tx deathdealer0",
+                "fmg2288"
+            ],
+            "survey_completed": true
+        },
+        "BlobFishPro": {
+            "level": 437,
+            "main_char": "Daemon",
+            "connections": [
+                "Arivvan",
+                "CryoMoon3929",
+                "v pooch v",
+                "DommMommy69",
+                "Insan3 Leg3nd",
+                "oO HollyW o o D",
+                "WonderCabbage32",
+                "TardisBoxV2",
+                "LuckTsunami",
+                "RoflWaffle36",
+                "Z0MBPR1NC3SS",
+                "MD Brasilrj",
+                "o R I T T Y v",
+                "Leeboi22",
+                "B2W Joshua",
+                "TardisBoxV2",
+                "moneyman2166"
+            ],
+            "survey_completed": true
+        },
+        "makavelidios": {
+            "level": 497,
+            "main_char": "Daemon",
+            "connections": [
+                "Phatcat1223"
+            ],
+            "survey_completed": true
+        },
+        "PaneraBreaad": {
+            "level": null,
+            "main_char": "Daemon",
+            "connections": [
+                "BlobFishPro",
+                "Z0MBPR1NC3SS",
+                "FatterGrain2",
+                "Cthulue",
+                "ADirtyYoshi",
+                "M4IFU",
+                "Odd5209",
+                "Yuta",
+                "Alexyooo97",
+                "AzTeRisk",
+                "B1akehow",
+                "BloodyMenaxe",
+                "Carpet Diem GRC",
+                "IFeetSniff",
+                "Imonly9",
+                "SightlyCargo440",
+                "thetruepilliger",
+                "UNSC Padwan",
+                "WHOLadyChum"
+            ],
+            "survey_completed": true
+        },
+        "That guys pumpkin ": {
+            "level": 87,
+            "main_char": "Gizmo",
+            "connections": [],
+            "survey_completed": true
+        },
+        "MedianBonsai766": {
+            "level": 246,
+            "main_char": "Makutu",
+            "connections": [
+                "BlobFishPro",
+                "Odd5209",
+                "Dy4us",
+                "Jukeboxhero",
+                "v pooch v",
+                "Gunked",
+                "eyeoz",
+                "DoS Pogorausch",
+                "M4IFU",
+                "Antikosmic",
+                "zzinsane",
+                "oceanman",
+                "Carpet Diem GRC",
+                "glint",
+                "diamondgem",
+                "escanor",
+                "fmg2288",
+                "gored",
+                "HajimeJapan",
+                "neon spark",
+                "little ninja",
+                "mysome",
+                "rubba duckie",
+                "tb purp",
+                "XxNuKe YoMaMaXx",
+                "Yuta",
+                "zero",
+                "woofy loser",
+                "thetruepilliger",
+                "the twisted angel",
+                "rich Ken kaneki"
+            ],
+            "survey_completed": true
+        },
+        "CryoMoon3929": {
+            "level": null,
+            "main_char": "Nidhoggr",
+            "connections": [
+                "BlobFishPro",
+                "moneyman2166"
+            ],
+            "survey_completed": true
+        },
+        "grey_tucc": {
+            "level": 51,
+            "main_char": "ZeroCool",
+            "connections": [],
+            "survey_completed": true
+        },
+        "MD Brasilrj": {
+            "level": 130,
+            "main_char": "ZeroCool",
+            "connections": [
+                "Lord Andard",
+                "LuckTsunami",
+                "VKSinclair "
+            ],
+            "survey_completed": true
+        },
+        "HajimeJapan": {
+            "level": 361,
+            "main_char": "ZeroCool",
+            "connections": [
+                "Alsiel Hallel",
+                "BlobFishPro",
+                "Z0MBPR1NC3SS"
+            ],
+            "survey_completed": true
+        },
+        "Z0MBPR1NC3SS": {
+            "level": null,
+            "main_char": "ZeroCool",
+            "connections": [
+                "Antikosmic",
+                "FatterGrain2",
+                "hanzo",
+                "Yuta",
+                "ADirtyYoshi",
+                "oceanman",
+                "Lhasadekin",
+                "Wanda Maximoff",
+                "SightlyCargo440",
+                "wonndalone",
+                "kidfromcali",
+                "alexdj",
+                "drnkpotate",
+                "masonmayne",
+                "jawnsinah",
+                "fmg2288",
+                "HajimeJapan",
+                "little ninja",
+                "sneik"
+            ],
+            "survey_completed": true
+        },
+        "Airplaingod7": {
+            "level": null,
+            "main_char": "ZeroCool",
+            "connections": [],
+            "survey_completed": true
+        },
+        "Dy4us": {
+            "level": 400,
+            "main_char": null,
+            "connections": [
+                "Odd5209",
+                "thetruepilliger",
+                "Spacebunny1114 "
+            ],
+            "survey_completed": true
+        },
+        "Funky3242": {
+            "level": null,
+            "main_char": "Nidhoggr",
+            "connections": [],
+            "survey_completed": true
+        },
+        "Surrtan": {
+            "level": null,
+            "main_char": "Kulev",
+            "connections": [
+                "b4njAx"
+            ],
+            "survey_completed": true
+        },
+        "b4njAx": {
+            "level": null,
+            "main_char": "El Bastardo",
+            "connections": [
+                "Phatcat1223",
+                "Burby92",
+                "Z0MBPR1NC3SS",
+                "RageKrom",
+                "CHA0S44",
+                "Dy4us",
+                "XxNuKe YoMaMaXx",
+                "ADirtyYoshi",
+                "Wanda Maximoff",
+                "DoS Pogorausch",
+                "thetruepilliger",
+                "ItsNE0N spark"
+            ],
+            "survey_completed": true
+        },
+        "IsaacDarso87": {
+            "level": 280,
+            "main_char": "Nidhoggr",
+            "connections": [],
+            "survey_completed": false
+        },
+        "The Aladeen": {
+            "level": 273,
+            "main_char": "Miko",
+            "connections": [],
+            "survey_completed": false
+        },
+        "Gunked": {
+            "level": 185,
+            "main_char": "Cass",
+            "connections": [],
+            "survey_completed": false
+        },
+        "thetruepilliger": {
+            "level": 350,
+            "main_char": "Gizmo",
+            "connections": [],
+            "survey_completed": false
+        },
+        "Rollingtwenty": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Tx deathdealer0": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "fmg2288": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "FatterGrain2": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Cthulue": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "ADirtyYoshi": {
+            "level": null,
+            "main_char": "ZeroCool",
+            "connections": [],
+            "survey_completed": false
+        },
+        "M4IFU": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Yuta": {
+            "level": null,
+            "main_char": "Daemon",
+            "connections": [],
+            "survey_completed": false
+        },
+        "Alexyooo97": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "AzTeRisk": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "B1akehow": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "BloodyMenaxe": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Carpet Diem GRC": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "IFeetSniff": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Imonly9": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "SightlyCargo440": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "UNSC Padwan": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "WHOLadyChum": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Jukeboxhero": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "eyeoz": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "zzinsane": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "oceanman": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "glint": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "diamondgem": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "escanor": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "gored": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "neon spark": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "little ninja": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "mysome": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "rubba duckie": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "tb purp": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "zero": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "woofy loser": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "the twisted angel": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "rich Ken kaneki": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Arivvan": {
+            "level": 11,
+            "main_char": null,
+            "connections": [
+                "BlobFishPro",
+                "CryoMoon3929",
+                "moneyman2166"
+            ],
+            "survey_completed": false
+        },
+        "v pooch v": {
+            "level": 158,
+            "main_char": "ZeroCool",
+            "connections": [],
+            "survey_completed": false
+        },
+        "DommMommy69": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Insan3 Leg3nd": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "oO HollyW o o D": {
+            "level": 155,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "WonderCabbage32": {
+            "level": 13,
+            "main_char": null,
+            "connections": [
+                "BlobFishPro",
+                "TardisBoxV2"
+            ],
+            "survey_completed": false
+        },
+        "TardisBoxV2": {
+            "level": 9,
+            "main_char": null,
+            "connections": [
+                "WonderCabbage32",
+                "BlobFishPro"
+            ],
+            "survey_completed": false
+        },
+        "LuckTsunami": {
+            "level": 151,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "RoflWaffle36": {
+            "level": 62,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "o R I T T Y v": {
+            "level": 32,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Leeboi22": {
+            "level": 32,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "B2W Joshua": {
+            "level": 1254,
+            "main_char": "Buttercup",
+            "connections": [],
+            "survey_completed": false
+        },
+        "Lord Andard": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "VKSinclair ": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Antikosmic": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "hanzo": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Lhasadekin": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "wonndalone": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "kidfromcali": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "alexdj": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "drnkpotate": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "masonmayne": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "jawnsinah": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Spacebunny1114 ": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Phatcat1223": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Burby92": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "RageKrom": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "CHA0S44": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "XxNuKe YoMaMaXx": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Wanda Maximoff": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "DoS Pogorausch": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "ItsNE0N spark": {
+            "level": null,
+            "main_char": null,
+            "connections": [],
+            "survey_completed": false
+        },
+        "Alsiel Hallel": {
+            "level": null,
+            "main_char": "Cass",
+            "connections": [],
+            "survey_completed": false
+        },
+        "sneik": {
+            "level": null,
+            "main_char": "Makutu",
+            "connections": [],
+            "survey_completed": false
+        },
+        "moneyman2166": {
+            "level": 21,
+            "main_char": "Nidhoggr",
+            "connections": [
+                "v pooch v",
+                "BlobFishPro",
+                "CryoMoon3929",
+                "Arivvan"
+            ],
+            "survey_completed": true
+        }
+    }
+}

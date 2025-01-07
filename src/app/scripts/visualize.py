@@ -1,17 +1,21 @@
 from pyvis.network import Network
+from data.character_images import character_images
+
 
 def __add_nodes_to_network(net: Network, nodes: dict) -> None:
     """
     Adds nodes to the network graph.
     """
     for node_name, attributes in nodes.items():
-        level = attributes.get('level', 'N/A')  # Default to 'N/A' if level is missing or None
-        main_char = attributes.get('main_char', 'Unknown')  # Default to 'Unknown' if main_char is missing or None
+        level = attributes.get('level', 'Unknown') if attributes.get('level') is not None else 'Unknown'
+        main_char = attributes.get('main_char', 'Unknown') if attributes.get('main_char') is not None else 'Unknown'
         
         net.add_node(
             node_name,
             label=node_name,
-            title=f"Level: {level} | Main Character: {main_char}"
+            title=f"Level: {level} | Main Character: {main_char}",
+            image=character_images.get(main_char, ""),
+            shape='circularImage'
         )
 
 def __add_edges_to_network(net: Network, nodes: dict) -> None:
@@ -37,11 +41,12 @@ def __add_edges_to_network(net: Network, nodes: dict) -> None:
             else:
                 print(f"Warning: Connection target '{connection}' for node '{node_name}' does not exist.")
 
+
 def create_full_graph(data: dict) -> str:
     """
     Creates a graph with all nodes and connections.
     """
-    net = Network()
+    net = Network(height="750px")
     nodes = data.get("nodes", {})
     
     __add_nodes_to_network(net, nodes)

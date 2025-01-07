@@ -26,5 +26,5 @@ def main():
 
 if __name__ == "__main__":
     if 'node_manager' not in st.session_state:
-        st.session_state['node_manager'] = NodeManager(os.path.abspath("src\data\connections.json"))
+        st.session_state['node_manager'] = NodeManager(os.path.abspath(r"src\app\data\connections.json"))
     main()
