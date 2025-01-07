@@ -1,0 +1,42 @@
+{
+    "nodes": {
+        "Player1": {
+            "level": 1,
+            "connections": [
+                "Player2",
+                "Player3",
+                "a"
+            ],
+            "main_char": "CharA"
+        },
+        "Player2": {
+            "level": 2,
+            "connections": [
+                "Player4"
+            ],
+            "main_char": "CharB"
+        },
+        "Player3": {
+            "level": 3,
+            "connections": [
+                "Player1"
+            ],
+            "main_char": "CharC"
+        },
+        "Player4": {
+            "level": 4,
+            "connections": [
+                "Player2"
+            ],
+            "main_char": "CharD"
+        },
+        "a": {
+            "level": 1,
+            "main_char": null,
+            "connections": [
+                "Player2",
+                "Player3"
+            ]
+        }
+    }
+}
