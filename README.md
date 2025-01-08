@@ -1,5 +1,5 @@
 # Bleeding Edge Community Network Graph and App
-- View and Interact with the latest graph at: [https://blob7.github.io/Bleeding-Edge-Friendship-Tree/](https://blob7.github.io/BE-Friendship-Network/)
+- View and Interact with the latest graph at: [https://blob7.github.io/BE-Friendship-Network/](https://blob7.github.io/BE-Friendship-Network/)
 - Contribute your own data by completing this survey: [https://forms.gle/DwxipGdJrvArv4pT9](https://forms.gle/DwxipGdJrvArv4pT9)
 - If any data is incorrect, missing, or outdated please reach out to me and I will update it.
 - *Maitained and created by blob :D*
