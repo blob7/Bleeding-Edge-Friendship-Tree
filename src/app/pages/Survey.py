@@ -6,7 +6,5 @@ def create_page():
     components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSecQzU9o60JTEpZeNaCTexX_nRR4C5FkbCCh45ExzU9tHIs3w/viewform", height=800, scrolling=True)
 
 if __name__ == "__main__":
-    if 'node_manager' not in st.session_state:
-        st.write("Please Return to Homepage to load data")
     page_config(icon="📋", title="Survey")
     create_page()
