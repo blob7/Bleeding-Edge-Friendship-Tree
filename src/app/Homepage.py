@@ -10,7 +10,7 @@ def create_page():
 def page():
     st.write(f"### Currently {len(st.session_state['node_manager'])} Nodes!")
     st.write("Google Forum to submit data: https://forms.gle/DwxipGdJrvArv4pT9")
-    st.write("Official Community Network Graph: https://blob7.github.io/Bleeding-Edge-Friendship-Tree/")
+    st.write("Official Community Network Graph: https://blob7.github.io/BE-Friendship-Network/")
     st.write("#### Navigation")
     st.page_link("Homepage.py", label="**Homepage:** landing page for the Network Manager app")
     st.page_link("pages/About.py", label="**About:** Information about the author, purpose, and functionalities of this app")
