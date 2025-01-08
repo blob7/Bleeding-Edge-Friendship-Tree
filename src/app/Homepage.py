@@ -4,17 +4,19 @@ from scripts.node_manager import NodeManager
 import os
 
 def create_page():
-    st.title("Welcome to the Network Manager app")
+    st.title("Welcome to the Network Manager App")
     page()
 
 def page():
     st.write(f"### Currently {len(st.session_state['node_manager'])} Nodes!")
-    st.write("Link to Google Forum to submit data: https://forms.gle/DwxipGdJrvArv4pT9")
+    st.write("Google Forum to submit data: https://forms.gle/DwxipGdJrvArv4pT9")
+    st.write("Official Community Network Graph: https://blob7.github.io/Bleeding-Edge-Friendship-Tree/")
     st.write("#### Navigation")
-    st.page_link("pages/About.py", label="About: Information about the author, purpose, and functionalities of this app")
-    st.page_link("pages/Full_Tree.py", label="Full Tree: Displays the current Network Graph")
-    st.page_link("pages/Update_Players.py", label="Update Players: Option to change the data in the graph and allows for signle node view")
-    st.page_link("pages/Survey.py", label="Allows you to take the survey from within the app")
+    st.page_link("Homepage.py", label="**Homepage:** landing page for the Network Manager app")
+    st.page_link("pages/About.py", label="**About:** Information about the author, purpose, and functionalities of this app")
+    st.page_link("pages/Full_Network.py", label="**Full Network:** Displays the current Network Graph")
+    st.page_link("pages/Manage_Nodes.py", label="**Manage Nodes:** Option to change the data in the graph and allows for signle node view")
+    st.page_link("pages/Survey.py", label="**Survey:** Allows you to take the survey from within the app")
 
    
 
