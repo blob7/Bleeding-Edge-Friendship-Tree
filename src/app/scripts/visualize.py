@@ -1,5 +1,5 @@
 from pyvis.network import Network
-from data.character_images import character_images
+from data.node_styles import node_styles
 
 
 def __add_nodes_to_network(net: Network, nodes: dict) -> None:
@@ -9,13 +9,14 @@ def __add_nodes_to_network(net: Network, nodes: dict) -> None:
     for node_name, attributes in nodes.items():
         level = attributes.get('level', 'Unknown') if attributes.get('level') is not None else 'Unknown'
         main_char = attributes.get('main_char', 'Unknown') if attributes.get('main_char') is not None else 'Unknown'
+        style=node_styles.get(main_char)
         
         net.add_node(
             node_name,
             label=node_name,
             title=f"Level: {level} | Main Character: {main_char}",
-            image=character_images.get(main_char, ""),
-            shape='circularImage'
+            image=style.get("image", ""),
+            shape='circularImage'            
         )
 
 def __add_edges_to_network(net: Network, nodes: dict) -> None:

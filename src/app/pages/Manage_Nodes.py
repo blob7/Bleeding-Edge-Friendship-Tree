@@ -3,7 +3,6 @@ import streamlit.components.v1 as components
 from scripts.common_pages import page_config
 from scripts.node_manager import NodeManager
 from scripts.visualize import create_neighbor_graph
-import os
 
 characters = ["Daemon", "Gizmo", "Nidhoggr", "Maeve", "Cass", "Miko", "Kulev", "Azreal", "ZeroCool", "El Bastardo", "Buttercup", "Mekko", "Makutu"]
 

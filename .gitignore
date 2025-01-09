@@ -163,4 +163,5 @@ cython_debug/
 
 # Custom
 Connection_Graph.py
-/src/app/data/character_images.py
+/src/app/data/node_styles.py
+testing.html
