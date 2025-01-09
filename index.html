@@ -33,7 +33,7 @@
 
              #mynetwork {
                  width: 100%;
-                 height: 100vh;
+                 height: 99vh;
                  background-color: #202c40;
                  border: 1px solid lightgray;
                  position: relative;
@@ -42,12 +42,6 @@
 
              
 
-             
-             #config {
-                 float: left;
-                 width: 400px;
-                 height: 600px;
-             }
              
 
              
@@ -63,8 +57,6 @@
         </div>
 
         
-        
-            <div id="config"></div>
         
 
         <script type="text/javascript">
@@ -110,7 +102,7 @@
 
                   var options = {
     "configure": {
-        "enabled": true
+        "enabled": false
     },
     "edges": {
         "color": {
@@ -149,10 +141,6 @@
                   
 
 
-                  
-                  // if this network requires displaying the configure window,
-                  // put it in its div
-                  options.configure["container"] = document.getElementById("config");
                   
 
                   network = new vis.Network(container, data, options);
