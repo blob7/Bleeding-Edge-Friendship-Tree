@@ -9,14 +9,18 @@ def __add_nodes_to_network(net: Network, nodes: dict) -> None:
     for node_name, attributes in nodes.items():
         level = attributes.get('level', 'Unknown') if attributes.get('level') is not None else 'Unknown'
         main_char = attributes.get('main_char', 'Unknown') if attributes.get('main_char') is not None else 'Unknown'
-        style=node_styles.get(main_char)
+        style=node_styles.get(main_char, node_styles.get("Default"))
         
         net.add_node(
             node_name,
             label=node_name,
             title=f"Level: {level} | Main Character: {main_char}",
             image=style.get("image", ""),
-            shape='circularImage'            
+            shape='circularImage',
+            borderWidth="0",
+            borderWidthSelected="5",
+            color=style.get("color"),
+            shadow=True            
         )
 
 def __add_edges_to_network(net: Network, nodes: dict) -> None:
@@ -34,9 +38,9 @@ def __add_edges_to_network(net: Network, nodes: dict) -> None:
                         if not ((edge["from"] == connection and edge["to"] == node_name) or
                                 (edge["from"] == node_name and edge["to"] == connection))
                     ]
-                    net.add_edge(connection, node_name, arrows="to, from")
+                    net.add_edge(connection, node_name, arrows="to, from", shadow=True)
                 else:
-                    net.add_edge(node_name, connection, arrows="to")
+                    net.add_edge(node_name, connection, arrows="to", shadow=True)
                 added_edges.add((node_name, connection))
                 added_edges.add((connection, node_name))
             else:
@@ -47,8 +51,9 @@ def create_full_graph(data: dict) -> str:
     """
     Creates a graph with all nodes and connections.
     """
-    net = Network(height="750px")
+    net = Network(bgcolor="#202c40", font_color="white", height = "750px")
     nodes = data.get("nodes", {})
+    net.barnes_hut(central_gravity=1, overlap=0.5)
     
     __add_nodes_to_network(net, nodes)
     __add_edges_to_network(net, nodes)
